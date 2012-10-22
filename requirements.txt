@@ -1,0 +1,13 @@
+PIL
+
+Django>=1.4
+
+south
+
+django-grappelli
+django-filebrowser
+
+django-taggit
+django-taggit-templatetags
+django-pagination
+
