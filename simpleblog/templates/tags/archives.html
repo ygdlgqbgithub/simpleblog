@@ -1,0 +1,10 @@
+<div id="archive">
+    <ul class="archives">
+        <li class="metro highlight wide"><a>归档</a></li>
+        {% for date in dates %}
+            <li class="metro wide"><a href="{% url simpleblog_archive date.year date.month %}">{{ date|date:'F Y' }}</a></li>
+        {% endfor %}
+        <div class="clear"></div>
+    </ul>
+</div>
+

@@ -1,0 +1,173 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN"
+"http://www.w3.org/TR/html4/strict.dtd">
+
+
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html;charset=utf-8"/>
+<title> SimpleBlog </title>
+
+<script type="text/javascript" src="{{ STATIC_URL }}js/coolclock.js"></script>
+<script type="text/javascript" src="{{ STATIC_URL }}js/moreskins.js"></script>
+<link rel="stylesheet" href="{{ STATIC_URL }}css/reset.css" type="text/css" media="screen" />
+
+
+<!-- syntaxhighlighter -->
+<link href="{{ STATIC_URL }}js/syntaxhighlighter/styles/shCore.css" type="text/css" rel="stylesheet"/>
+<link href="{{ STATIC_URL }}js/syntaxhighlighter/styles/shThemeDjango.css" type="text/css" rel="stylesheet"/>
+<script type="text/javascript" src="{{ STATIC_URL }}js/syntaxhighlighter/scripts/shCore.js"></script>
+<script type="text/javascript" src="{{ STATIC_URL }}js/syntaxhighlighter/scripts/shBrushPython.js"></script>
+<script type="text/javascript" src="{{ STATIC_URL }}js/syntaxhighlighter/scripts/shBrushXml.js"></script>
+<script type="text/javascript" src="{{ STATIC_URL }}js/syntaxhighlighter/scripts/shBrushSql.js"></script>
+<script type="text/javascript" src="{{ STATIC_URL }}js/syntaxhighlighter/scripts/shBrushJScript.js"></script>
+<script type="text/javascript" src="{{ STATIC_URL }}js/syntaxhighlighter/scripts/shBrushJava.js"></script>
+<script type="text/javascript" src="{{ STATIC_URL }}js/syntaxhighlighter/scripts/shBrushCss.js"></script>
+<script type="text/javascript" src="{{ STATIC_URL }}js/syntaxhighlighter/scripts/shBrushCpp.js"></script>
+<script type="text/javascript" src="{{ STATIC_URL }}js/syntaxhighlighter/scripts/shBrushPerl.js"></script>
+<script type="text/javascript" src="{{ STATIC_URL }}js/syntaxhighlighter/scripts/shBrushBash.js"></script>
+<script type="text/javascript" src="{{ STATIC_URL }}js/syntaxhighlighter/scripts/shBrushCSharp.js"></script>
+<script type="text/javascript" src="{{ STATIC_URL }}js/syntaxhighlighter/scripts/shBrushPhp.js"></script>
+<script type="text/javascript" src="{{ STATIC_URL }}js/syntaxhighlighter/scripts/shBrushPerl.js"></script>
+<script type="text/javascript" src="{{ STATIC_URL }}js/syntaxhighlighter/scripts/shCore.js"></script>
+<script  type = "text/javascript">
+    SyntaxHighlighter.all();
+</script>
+
+</head>
+<body onload="CoolClock.findAndCreateClocks()">
+
+<style>
+	a{text-decoration: none;}
+	li{list-style-type: none;}
+	#main{width:100%;background:url("{{ STATIC_URL }}img/back.png") ;}
+	#banner{width:960px; height:75px; margin:0 auto;}
+	#wrapper{width:960px;margin:0 auto; }
+	#footer{width:960px;height:60px; margin:0 auto;margin-top:20px;}
+	#title{float:left;width:500px;height:75px;font-size:40px;text-align:center;padding-left: 60px;
+			padding-top: 45px; padding-bottom:30px; }
+	#title a{color:#912CEE}
+
+	
+	
+
+	#wrapper{position: relative; border-bottom:2px dashed #999;}
+	#clock{position: absolute;right: 16px;top: -70px;z-index: 999;}
+	#wrapper #left{width: 700px; float:left;}
+	#wrapper #right{width:200px;float: right;margin-top: 15px;	}
+	#wrapper .clear{clear: both;}
+	
+	#cat,#flatpage,#tag,#archive,#hot {margin-top: 38px;}
+	#cats,#flatpages,#tags,#archives,#hots{width: 190px;margin:0 auto;}
+	
+	.related {text-align:right;padding-top:10px;color:#007829;font-size: 20px;}
+	.related a {color:#007829}
+	
+	.flattitle {text-align:center;background-color: #FFF5F0;border-radius:10px;}
+	.flattitle .titlepara {width: 630px; padding:10px 10px;}
+	
+	h2 a {font-size:20px;color:#007829}
+	
+	.pagination {text-align:right;padding-bottom:20px}
+	
+	.metro a{float:left;display: block;width:93px;height: 38px;color:#007829;background-color: #FFF2B8;text-align: center;
+				vertical-align:middle;line-height:38px;margin-top: 4px;margin-left: 2px; border-radius:2px;}
+	.metro a:hover{ background-color: #FF7F24;}
+	.metro a:nth-child(odd){margin-right: 2px;}
+	
+	.highlight a{background-color:#FF82AB;}
+	.highlight a:hover{background-color: #FF7F00;}
+	
+	.wide a{width:190px;}
+	
+	.article{display: block; width:680px;margin:10px 30px 30px 45px;color:#007829;font-size: 20px;position: relative;}
+	
+	.article .desc{width: 660px;margin-left: 10px;margin-top: 10px;font-size: 15px;background-color: #FFF590; border-radius:10px;}
+	.article .desc .descpara{width:630px; padding:20px 20px; }
+	.article .content{width: 690px;margin-left: -5px;margin-top: 10px;font-size: 15px;background-color: #FFF590; border-radius:10px;}
+	.article .content .contentpara{ padding-top: 20px;padding-left: 10px;padding-bottom: 40px;padding-right: 10px; }
+	
+	.article .title{ background-color: #FFF5F0; border-radius:10px;}
+	.article .title .titlepara {width: 630px; padding:10px 10px;}
+	.article .time {font-size: 15px; right:20px;top: 5px;position: absolute;color: #912CEE}
+
+	#slider{position: absolute;top:15px;left:5px;display: block;border-radius:8px;background-color: #DDD;}
+	#slider .icon{display: block;width:48px;height:48px;z-index:999;background-color: #DDD;border-radius:8px;margin: 8px 5px 8px 5px;}
+	#slider #home{background:url('{{ STATIC_URL }}img/home.ico');}
+	#slider #rss{background:url('{{ STATIC_URL }}img/rss_icon_glare.ico');}
+	
+	#foot{text-align:center;font-size:15px}
+	#footer{font-size: 0.8em;}
+	#footer p{width: 780px; margin:0 auto;}
+	#footer .mail{color: #FF34B3;}	
+ 
+</style>
+
+<!-- silder -->
+<ul id="slider">
+	<li><a class="icon" id='home' href="{% url simpleblog_index %}"></a></li>
+	<li><a class="icon" id='rss' href="{% url simpleblog_feeds %}"></a></li>
+
+</ul>
+
+
+<div id="main">
+	<section id="banner">
+		<div id="title">               
+            <p><a href="{% url simpleblog_index %}">Simpleblog Demo</a></p>
+		</div>		
+	</section>
+	
+	
+	<section id="wrapper">
+		
+	    <canvas id="clock" class="CoolClock:Sand" style="width:170px;height:170px;"></canvas>
+	    
+	    <div id="left">
+			
+		    {% block content %}{% endblock %}
+
+
+        </div>
+        
+		<div id="right">   
+
+			{% load simpleblog_tags %}
+				
+			{% flatpage %}
+				
+			{% category %}
+
+			{% load taggit_extras %}
+            {% get_tagcloud as tags %}
+
+            <div id="tag">
+            
+            <ul class="tags">
+                <li class="metro highlight wide"><a>标签云</a></li>
+                {% for tag in tags %}
+                    <li class="metro"><a href="{% url simpleblog_tag tag.name %}">
+                    <font size={{ tag.weight|floatformat:0 }}>{{ tag }}</font></a></li>
+                {% endfor %}
+                <div class="clear"></div>
+            </ul>
+            </div>
+            
+            {% archives %}
+            
+            {% hots %}
+			
+		</div>
+		<div class="clear"></div>
+		
+	</section>
+	
+
+	<section id="footer">
+		<p id="foot">Demo Simpleblog &nbsp;&nbsp;&nbsp; powered by <a href="www.djangoproject.com">Django</a></p>
+	</section>
+
+</div>
+
+</body>
+</html>
+

@@ -1,0 +1,10 @@
+<div id="cat">
+    <ul class="cats">
+        <li class='metro wide highlight'><a>分类</a></li>
+        {% for category in categorys %}
+            <li class="metro"><a href="{{ category.get_absolute_url }}">{{ category.name }}({{ category.articles.all|length }})</a></li>
+        {% endfor %}
+        <div class="clear"></div>
+    </ul>
+</div>
+

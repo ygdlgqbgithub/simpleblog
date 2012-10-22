@@ -1,0 +1,10 @@
+<div id="hot">
+    <ul class="hots">
+        <li class="metro highlight wide"><a>最热文章</a></li>
+        {% for article in articles %}
+            <li class="metro wide"><a href="{{ article.get_absolute_url }}">{{ article.title|truncatechars:15 }}</a></li>
+        {% endfor %}
+        <div class="clear"></div>
+    </ul>
+</div>
+

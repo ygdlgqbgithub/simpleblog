@@ -1,0 +1,8 @@
+<div class="widget">
+    <h3>最新文章</h3>
+    <ul>
+    {% for article in articles %}
+        <li><a href="{{ article.get_absolute_url }}">{{ article.title }}</a></li>
+    {% endfor %}
+    </ul>
+</div>

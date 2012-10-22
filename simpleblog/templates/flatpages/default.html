@@ -1,0 +1,8 @@
+{% extends 'simpleblog/base.html' %}
+
+{% block content %}
+     <ul class="article">
+		<div class="flattitle"><p class="titlepara"><a href="{{ flatpage.url }}">{{ flatpage.title }}</a></p></div>
+		<div class="content"><div class="contentpara">{{ flatpage.content|safe }}</div>
+	</ul>
+{% endblock %}

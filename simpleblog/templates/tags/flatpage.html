@@ -1,0 +1,9 @@
+<div id="flatpage">
+    <ul class="flatpages">
+        {% for flatpage in flatpages %}
+            <li class="metro"><a href="{{ flatpage.url }}">{{ flatpage.title }}</a></li>
+        {% endfor %}
+        <div class="clear"></div>
+    </ul>
+</div>
+
