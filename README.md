@@ -2,7 +2,7 @@
 
 simpleblog is a demo blog powered by Django.
 
-## demo site:
+## demo site
 
 + site url: [http://demoblog.sinaapp.com/](http://demoblog.sinaapp.com/)
 + admin url: [http://demoblog.sinaapp.com/](http://demoblog.sinaapp.com/admin/)
