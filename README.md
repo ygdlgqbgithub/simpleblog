@@ -5,7 +5,7 @@ simpleblog is a demo blog powered by Django.
 ## demo site:
 
 + site url: [http://demoblog.sinaapp.com/](http://demoblog.sinaapp.com/)
-+ admin url: [http://demoblog.sinaapp.co](http://demoblog.sinaapp.com/admin/)
++ admin url: [http://demoblog.sinaapp.com/](http://demoblog.sinaapp.com/admin/)
 + username: jiangyou    
 + password: jiangyou
 
